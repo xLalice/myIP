@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Header from './components/Header/';
 import './App.scss';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <div className="main">
+      <Header />
       <h1>Get your IP Address</h1>
       <p className="main__content">
         Your IP address : <span className="main__content--datas">{ip.ip}</span>
