@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header/';
 import Map from './components/Map/';
-import './App.scss';
+import './_shared.scss';
 
 function App() {
   const [ip, setIp] = useState('');
@@ -35,7 +35,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetchIp().then(() => console.log(ip));
+    fetchIp();
   }, []);
 
   useEffect(() => {
@@ -73,9 +73,7 @@ function App() {
           {geolocatioDatas.regionName}
         </span>
       </p>
-      <div id="map" style={{ minHeight: '100vh', width: '100%' }}>
-        <Map lat={lat} lon={lon} />
-      </div>
+      {(lat !== '') & (lon !== '') ? <Map lat={lat} lon={lon} /> : null}
     </div>
   );
 }

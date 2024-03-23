@@ -1,4 +1,13 @@
+@use '../../_shared.scss';
+
+#map {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  background: shared.$secondary-background-color;
+}
 .leaflet-container {
   width: 100%;
+  margin: auto;
   height: 50vh;
 }
