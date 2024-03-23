@@ -47,9 +47,9 @@ function App() {
   return (
     <div className="main">
       <Header />
-      <h1>Get your IP Address</h1>
+      <h2>Here is your information</h2>
       <p className="main__content">
-        Your IP address : <span className="main__content--datas">{ip}</span>
+        IP address : <span className="main__content--datas">{ip}</span>
       </p>
       <p className="main__content">
         City :{' '}

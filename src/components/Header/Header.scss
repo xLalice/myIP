@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   &__nav {
@@ -8,4 +8,8 @@
       list-style-type: none;
     }
   }
+}
+
+h1 {
+  font-size: 3.375rem;
 }
