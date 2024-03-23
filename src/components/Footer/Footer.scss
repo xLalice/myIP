@@ -1,0 +1,16 @@
+@use '../../_shared.scss';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: shared.$background-color;
+  background: shared.$third-color;
+  width: 100%;
+  @include shared.desktop-padding;
+  & a {
+    display: block;
+    padding: 5px;
+  }
+}

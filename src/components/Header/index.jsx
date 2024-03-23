@@ -10,7 +10,7 @@ const Header = () => {
         <ul className="header__nav">
           <li className="header__nav__link">
             <a href="https://github.com/gtcore902/myIP-frontend">
-              <FontAwesomeIcon icon={faGithub} size="lg" color="black" />
+              <FontAwesomeIcon icon={faGithub} size="lg" color="#6a5e44" />
             </a>
           </li>
         </ul>
