@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header/';
+import Map from './components/Map/';
 import './App.scss';
 
 function App() {
   const [ip, setIp] = useState('');
   const [geolocatioDatas, setGeolocationDatas] = useState('');
+  const [lat, setLat] = useState('');
+  const [lon, setLon] = useState('');
 
   const fetchIp = async () => {
     try {
       const response = await fetch('http://localhost:4000');
       const data = await response.json();
       console.log(data);
-      setIp(data);
+      setIp(data.ip);
     } catch (error) {
       console.log(error);
     }
@@ -23,25 +26,30 @@ function App() {
       const data = await response.json();
       console.log(data);
       setGeolocationDatas(data);
+      setLat(data.lat);
+      setLon(data.lon);
+      console.log(lat, lon);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    fetchIp();
+    fetchIp().then(() => console.log(ip));
   }, []);
 
   useEffect(() => {
-    getGeolocationDatas(ip.ip);
+    getGeolocationDatas(ip);
   }, [ip]);
+
+  useEffect(() => {}, []);
 
   return (
     <div className="main">
       <Header />
       <h1>Get your IP Address</h1>
       <p className="main__content">
-        Your IP address : <span className="main__content--datas">{ip.ip}</span>
+        Your IP address : <span className="main__content--datas">{ip}</span>
       </p>
       <p className="main__content">
         City :{' '}
@@ -65,6 +73,9 @@ function App() {
           {geolocatioDatas.regionName}
         </span>
       </p>
+      <div id="map" style={{ minHeight: '100vh', width: '100%' }}>
+        <Map lat={lat} lon={lon} />
+      </div>
     </div>
   );
 }
