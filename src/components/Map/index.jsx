@@ -1,8 +1,16 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  LayerGroup,
+  Circle,
+} from 'react-leaflet';
 import './Map.scss';
 
 const Map = ({ IpLat, IpLon, geoLat, geoLon }) => {
   let position = [];
+  const fillBlueOptions = { fillColor: 'red', color: 'red' };
   if (geoLat & geoLon) {
     const averageLat = (IpLat + geoLat) / 2;
     const averageLon = (IpLon + geoLon) / 2;
@@ -21,9 +29,16 @@ const Map = ({ IpLat, IpLon, geoLat, geoLon }) => {
           <Popup>Your current IP position.</Popup>
         </Marker>
         {(geoLat !== '') & (geoLon !== '') && (
-          <Marker position={[geoLat, geoLon]} style={{ color: 'red' }}>
-            <Popup>Your current geolocation position.</Popup>
-          </Marker>
+          <LayerGroup>
+            <Circle
+              center={[geoLat, geoLon]}
+              pathOptions={fillBlueOptions}
+              radius={6000}
+            />
+            <Marker position={[geoLat, geoLon]} style={{ color: 'red' }}>
+              <Popup>Your current geolocation position.</Popup>
+            </Marker>
+          </LayerGroup>
         )}
       </MapContainer>
     </div>

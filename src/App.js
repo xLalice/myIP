@@ -62,6 +62,11 @@ function App() {
     }
   };
 
+  /**
+   * Get geolocation from geolocation API service
+   * @param {number} geoLat
+   * @param {number} geoLon
+   */
   const getGeolocationDatas = async (geoLat, geoLon) => {
     try {
       const response = await fetch(
@@ -118,7 +123,7 @@ function App() {
             <p className="datas__content--label">
               City :{' '}
               <span className="datas__content--data">
-                {IpDatas.city} - {geolocationCity}
+                {IpDatas.city} (IP) - {geolocationCity} (Geoloc)
               </span>
             </p>
             <p className="datas__content--label">
@@ -128,13 +133,13 @@ function App() {
             <p className="datas__content--label">
               Lat :{' '}
               <span className="datas__content--data">
-                {IpDatas.lat} - {geoLat}
+                {IpDatas.lat} (IP) - {geoLat} (Geoloc)
               </span>
             </p>
             <p className="datas__content--label">
               Lon :{' '}
               <span className="datas__content--data">
-                {IpDatas.lon} - {geoLon}
+                {IpDatas.lon} (IP) - {geoLon} (Geoloc)
               </span>
             </p>
             <p className="datas__content--label">
