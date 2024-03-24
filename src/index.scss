@@ -12,22 +12,31 @@ body {
 }
 .main {
   font-size: 1.5rem;
-  &__datas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    &__content {
+}
+.datas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__content {
+    &--label {
       margin: 5px auto;
-      &--datas {
-        display: inline-block;
-        padding: 5px;
-        border-radius: 999px;
-        color: shared.$data-color;
-      }
+    }
+    &--data {
+      display: inline-block;
+      padding: 5px;
+      border-radius: 999px;
+      color: shared.$data-color;
     }
   }
 }
 
+h1 {
+  font-size: 3.375rem;
+  color: shared.$text-color;
+  text-shadow: 1px 1px 0 white;
+}
+
 h2 {
-  color: shared.$third-color;
+  color: shared.$text-color;
+  text-shadow: 1px 1p x 0 white;
 }

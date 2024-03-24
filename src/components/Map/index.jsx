@@ -4,7 +4,7 @@ import './Map.scss';
 const Map = ({ lat, lon }) => {
   return (
     <div id="map">
-      <MapContainer center={[lat, lon]} zoom={6} scrollWheelZoom={true}>
+      <MapContainer center={[lat, lon]} zoom={9} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

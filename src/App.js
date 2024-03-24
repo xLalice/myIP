@@ -55,38 +55,32 @@ function App() {
   return (
     <div className="main">
       <Header />
-      <div className="main__datas">
+      <div className="datas">
         <h2>Here is your information</h2>
-        <p className="main__datas__content">
-          IP address : <span className="main__datas__content--datas">{ip}</span>
+        <p className="datas__content--label">
+          IP address : <span className="datas__content--data">{ip}</span>
         </p>
-        <p className="main__datas__content">
+        <p className="datas__content--label">
           City :{' '}
-          <span className="main__datas__content--datas">
-            {geolocatioDatas.city}
-          </span>
+          <span className="datas__content--data">{geolocatioDatas.city}</span>
         </p>
-        <p className="main__datas__content">
+        <p className="datas__content--label">
           Country :{' '}
-          <span className="main__datas__content--datas">
+          <span className="datas__content--data">
             {geolocatioDatas.country}
           </span>
         </p>
-        <p className="main__datas__content">
+        <p className="datas__content--label">
           Lat :{' '}
-          <span className="main__datas__content--datas">
-            {geolocatioDatas.lat}
-          </span>
+          <span className="datas__content--data">{geolocatioDatas.lat}</span>
         </p>
-        <p className="main__datas__content">
+        <p className="datas__content--label">
           Lon :{' '}
-          <span className="main__datas__content--datas">
-            {geolocatioDatas.lon}
-          </span>
+          <span className="datas__content--data">{geolocatioDatas.lon}</span>
         </p>
-        <p className="main__datas__content">
+        <p className="datas__content--label">
           Région :{' '}
-          <span className="main__datas__content--datas">
+          <span className="datas__content--data">
             {geolocatioDatas.regionName}
           </span>
         </p>
