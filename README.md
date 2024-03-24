@@ -2,6 +2,7 @@
 
 This React application fetches IP and geolocation data and displays it to the user along with a map.
 The backend is built with Node.js and is available at this [repo](https://github.com/gtcore902/myIP-backend).
+And follow the instructions to start the server.
 
 ## Getting Started
 
@@ -10,7 +11,7 @@ To get a copy of this project up and running on your local machine, follow these
 1. Clone the repository:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/gtcore902/myIP-frontend.git
 ```
 
 2. Install dependencies:
@@ -38,6 +39,7 @@ npm start or yarn start
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
 - [SCSS](https://sass-lang.com/) - CSS preprocessor.
+- [NodeJS](https://nodejs.org/en) - JavaScript runtime platform.
 - [ip-api.com](http://ip-api.com/) - Geolocation API for fetching location data based on IP address.
 - [OpenWeatherMap](https://openweathermap.org/) - Weather API for reverse geocoding.
 
@@ -48,7 +50,7 @@ You're welcome :sunglasses:
 If you wish to use or contribute to the project, follow these steps:point_down::
 
 - Fork the project
-- Replace in apiKey.js file the key with you own key:
+- Replace in API_KEY.js file the key with you own key:
   > `const API_KEY = 'YOUR_API_KEY'` >`export default API_KEY`
 - Create a feature branch
   > git checkout -b feature/NewFeature
