@@ -6,7 +6,27 @@
   align-items: center;
   padding: 0 50px;
   border-bottom: solid 1px shared.$third-color;
-
+  @media all and (max-width: 678px) {
+    flex-direction: column;
+  }
+  @media all and (max-width: 430px) {
+    padding: 0;
+  }
+  &__title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @media all and (max-width: 430px) {
+      flex-direction: column;
+      margin-top: 18px;
+    }
+  }
+  & ul {
+    padding: 0;
+    @media all and (max-width: 430px) {
+      margin-top: 0;
+    }
+  }
   &__nav {
     &__link {
       list-style-type: none;

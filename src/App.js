@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import API_KEY from './assets/API_KEY';
+import API_KEY from './API_KEY';
 import Header from './components/Header/';
 import Map from './components/Map/';
 import Footer from './components/Footer/';
