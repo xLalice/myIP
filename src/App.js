@@ -111,7 +111,7 @@ function App() {
       <div className="datas">
         <h2>Here is your information</h2>
         <p className="datas__content--label">
-          IP address :{' '}
+          Your public IP address is:{' '}
           {isLoadedIp ? (
             <span className="datas__content--data">{ip}</span>
           ) : (
@@ -121,23 +121,23 @@ function App() {
         {isLoadedIpDatas ? (
           <div className="datas__content">
             <p className="datas__content--label">
-              City :{' '}
+              In or near the city of:{' '}
               <span className="datas__content--data">
                 {IpDatas.city} (IP) - {geolocationCity} (Geoloc)
               </span>
             </p>
             <p className="datas__content--label">
-              Country :{' '}
+              Country of location:{' '}
               <span className="datas__content--data">{IpDatas.country}</span>
             </p>
             <p className="datas__content--label">
-              Lat :{' '}
+              Latitude:{' '}
               <span className="datas__content--data">
                 {IpDatas.lat} (IP) - {geoLat} (Geoloc)
               </span>
             </p>
             <p className="datas__content--label">
-              Lon :{' '}
+              Longitude:{' '}
               <span className="datas__content--data">
                 {IpDatas.lon} (IP) - {geoLon} (Geoloc)
               </span>
@@ -146,6 +146,7 @@ function App() {
               Région :{' '}
               <span className="datas__content--data">{IpDatas.regionName}</span>
             </p>
+            <p>Note: This site does not record your IP addresses</p>
           </div>
         ) : (
           <div className="loader"></div>

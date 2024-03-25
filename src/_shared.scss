@@ -1,8 +1,12 @@
-$background-color: #fff1d0;
-$secondary-background-color: #feb775;
-$text-color: #074798;
-$third-color: #6a5e44;
-$data-color: #ae371f;
+// $background-color: #fff1d0;
+$background-color: #111d28;
+// $secondary-background-color: #feb775;
+$secondary-background-color: #f46c2b;
+// $text-color: #074798;
+$text-color: #f46c2b;
+// $third-color: #6a5e44;
+$third-color: #06101d;
+$data-color: #f46c2b;
 
 @mixin desktop-margin {
   margin: auto 5vw;
@@ -17,7 +21,7 @@ $data-color: #ae371f;
   width: 60px;
   margin: auto;
   aspect-ratio: 2;
-  --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+  --_g: no-repeat radial-gradient(circle closest-side, $text-color 90%, #0000);
   background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
   background-size: calc(100% / 3) 50%;
   animation: l3 1s infinite linear;
@@ -40,7 +44,7 @@ $data-color: #ae371f;
 /* HTML: <div class="loader"></div> */
 .loader-map {
   width: 4px;
-  color: #000;
+  color: $text-color;
   aspect-ratio: 1;
   border-radius: 50%;
   box-shadow: 19px -19px 0 0px, 38px -19px 0 0px, 57px -19px 0 0px, 19px 0 0 5px,

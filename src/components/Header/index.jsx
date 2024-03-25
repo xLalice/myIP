@@ -8,14 +8,17 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header__title">
-        <FontAwesomeIcon icon={faLocationDot} size="lg" color="#074798" />
+        <FontAwesomeIcon icon={faLocationDot} size="lg" color="#f46c2b" />
         <h1>Get your location information</h1>
       </div>
       <nav>
         <ul className="header__nav">
           <li className="header__nav__link">
-            <a href="https://github.com/gtcore902/myIP-frontend">
-              <FontAwesomeIcon icon={faGithub} size="lg" color="#074798" />
+            <a
+              aria-label="Link to the github project"
+              href="https://github.com/gtcore902/myIP-frontend"
+            >
+              <FontAwesomeIcon icon={faGithub} size="lg" color="#f46c2b" />
             </a>
           </li>
         </ul>

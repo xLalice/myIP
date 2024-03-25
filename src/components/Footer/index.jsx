@@ -7,10 +7,13 @@ import './Footer.scss';
 const Footer = () => {
   return (
     <div className="footer">
-      <FontAwesomeIcon icon={faLocationDot} size="lg" color="#fff1d0" />
+      <FontAwesomeIcon icon={faLocationDot} size="lg" color="#f46c2b" />
       <p>Get your location information</p>
-      <a href="https://github.com/gtcore902/myIP-frontend">
-        <FontAwesomeIcon icon={faGithub} size="lg" color="#fff1d0" />
+      <a
+        aria-label="Link to the github project"
+        href="https://github.com/gtcore902/myIP-frontend"
+      >
+        <FontAwesomeIcon icon={faGithub} size="lg" color="#f46c2b" />
       </a>
     </div>
   );
