@@ -35,7 +35,7 @@ npm start or yarn start
 - Displays IP address, city, country, latitude, longitude, and region information.
 - Shows a map based on the latitude and longitude information.
 - Utilizes React hooks for state management.
-- Fetches data from various APIs including geolocation, IP lookup, and weather.
+- Fetches data from various APIs including geolocation, IP lookup.
 
 ## Built With
 
