@@ -9,11 +9,9 @@ body {
   box-sizing: border-box;
   background: shared.$background-color;
   font-family: 'Oswald', sans-serif;
-  // font-optical-sizing: auto;
-  // font-weight: <weight>;
-  // font-style: normal;
   font-size: 1rem;
   letter-spacing: 0.1rem;
+  // font-weight: lighter;
 }
 .main {
   font-size: clamp(18px, 1.5vw, 1.5rem);
@@ -45,14 +43,14 @@ body {
       display: inline-block;
       padding: 5px;
       border-radius: 999px;
-      color: shared.$data-color;
+      color: shared.$main-color;
     }
   }
 }
 
 h1 {
   font-size: clamp(24px, 5vw, 3.375rem);
-  color: shared.$text-color;
+  color: shared.$main-color;
   // text-shadow: 1px 1px 0 white;
   margin-left: 20px;
   text-align: center;
@@ -65,6 +63,6 @@ h1 {
 h2 {
   font-size: clamp(22px, 3vw, 2.5rem);
   font-weight: lighter;
-  color: shared.$text-color;
+  color: shared.$main-color;
   // text-shadow: 1px 1p x 0 white;
 }

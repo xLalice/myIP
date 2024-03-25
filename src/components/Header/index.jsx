@@ -9,7 +9,9 @@ const Header = () => {
     <div className="header">
       <div className="header__title">
         <FontAwesomeIcon icon={faLocationDot} size="lg" color="#f46c2b" />
-        <h1>Get your location information</h1>
+        <h1>
+          Get your <span className="hight-light">location</span> information
+        </h1>
       </div>
       <nav>
         <ul className="header__nav">
