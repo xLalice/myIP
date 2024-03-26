@@ -1,0 +1,33 @@
+@use '../../_shared.scss';
+
+.datas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @media all and (max-width: 430px) {
+    width: 90%;
+    margin: auto;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & p {
+      color: white;
+    }
+    &--label {
+      margin: 5px auto;
+      color: white;
+    }
+    &--data {
+      display: inline-block;
+      padding: 5px;
+      border-radius: 999px;
+      color: shared.$main-color;
+    }
+  }
+}

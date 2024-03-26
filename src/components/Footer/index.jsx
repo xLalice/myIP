@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import GitShare from '../GitShare';
 
 import './Footer.scss';
 
@@ -9,12 +9,7 @@ const Footer = () => {
     <div className="footer">
       <FontAwesomeIcon icon={faLocationDot} size="lg" color="#f46c2b" />
       <p>Get your location information</p>
-      <a
-        aria-label="Link to the github project"
-        href="https://github.com/gtcore902/myIP-frontend"
-      >
-        <FontAwesomeIcon icon={faGithub} size="lg" color="#f46c2b" />
-      </a>
+      <GitShare size="lg" color="#f46c2b" />
     </div>
   );
 };

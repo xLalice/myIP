@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import API_KEY from './API_KEY';
 import Header from './components/Header/';
+import Datas from './components/Datas/';
 import Map from './components/Map/';
 import Footer from './components/Footer/';
 import './_shared.scss';
@@ -108,50 +109,19 @@ function App() {
   return (
     <div className="main">
       <Header />
-      <div className="datas">
-        <h2>Here is your information</h2>
-        <p className="datas__content--label">
-          Your public IP address is:{' '}
-          {isLoadedIp ? (
-            <span className="datas__content--data">{ip}</span>
-          ) : (
-            <span className="loader"></span>
-          )}
-        </p>
-        {isLoadedIpDatas ? (
-          <div className="datas__content">
-            <p className="datas__content--label">
-              In or near the city of:{' '}
-              <span className="datas__content--data">
-                {IpDatas.city} (IP) - {geolocationCity} (Geoloc)
-              </span>
-            </p>
-            <p className="datas__content--label">
-              Country of location:{' '}
-              <span className="datas__content--data">{IpDatas.country}</span>
-            </p>
-            <p className="datas__content--label">
-              Latitude:{' '}
-              <span className="datas__content--data">
-                {IpDatas.lat} (IP) - {geoLat} (Geoloc)
-              </span>
-            </p>
-            <p className="datas__content--label">
-              Longitude:{' '}
-              <span className="datas__content--data">
-                {IpDatas.lon} (IP) - {geoLon} (Geoloc)
-              </span>
-            </p>
-            <p className="datas__content--label">
-              Région :{' '}
-              <span className="datas__content--data">{IpDatas.regionName}</span>
-            </p>
-            <p>Note: This site does not record your IP addresses</p>
-          </div>
-        ) : (
-          <div className="loader"></div>
-        )}
-      </div>
+      <Datas
+        ip={ip}
+        isLoadedIp={isLoadedIp}
+        isLoadedIpDatas={isLoadedIpDatas}
+        ipCity={IpDatas.city}
+        geolocationCity={geolocationCity}
+        ipCountry={IpDatas.country}
+        ipLat={IpDatas.lat}
+        ipLon={IpDatas.lon}
+        geoLat={geoLat}
+        geoLon={geoLat}
+        ipRegion={IpDatas.regionName}
+      />
       {/* Check if lat and lon is defined */}
       {(IpLat !== '') & (IpLon !== '') ? (
         <Map IpLat={IpLat} IpLon={IpLon} geoLat={geoLat} geoLon={geoLon} />

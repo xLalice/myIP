@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import GitShare from '../GitShare';
 import './Header.scss';
 
 const Header = () => {
@@ -16,12 +15,7 @@ const Header = () => {
       <nav>
         <ul className="header__nav">
           <li className="header__nav__link">
-            <a
-              aria-label="Link to the github project"
-              href="https://github.com/gtcore902/myIP-frontend"
-            >
-              <FontAwesomeIcon icon={faGithub} size="lg" color="#f46c2b" />
-            </a>
+            <GitShare tag="Fork me" size="lg" color="#f46c2b" />
           </li>
         </ul>
       </nav>

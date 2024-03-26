@@ -1,0 +1,10 @@
+@use '../../_shared.scss';
+
+a {
+  padding: 5px;
+  color: shared.$main-color;
+  text-decoration: none;
+  & span {
+    margin-right: 5px;
+  }
+}
