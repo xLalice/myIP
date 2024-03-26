@@ -51,10 +51,23 @@ body {
 h1 {
   font-size: clamp(24px, 5vw, 3.375rem);
   color: shared.$main-color;
-  // text-shadow: 1px 1px 0 white;
   margin-left: 20px;
   text-align: center;
   font-weight: lighter;
+  & span {
+    position: relative;
+  }
+  & span:after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    height: 15px;
+    width: 100%;
+    background: shared.$main-color;
+    transform: rotate(-5deg) skew(-5deg);
+    z-index: -1;
+  }
   @media all and (max-width: 430px) {
     margin-left: 0;
   }
@@ -64,5 +77,4 @@ h2 {
   font-size: clamp(22px, 3vw, 2.5rem);
   font-weight: lighter;
   color: shared.$main-color;
-  // text-shadow: 1px 1p x 0 white;
 }
