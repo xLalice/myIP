@@ -32,8 +32,10 @@ function App() {
    * Fetch backend to get IP informations
    */
   const fetchIp = async () => {
+    const url = 'http://localhost:4000';
+    // const url = 'https://myip.gaetantremois.fr/';
     try {
-      const response = await fetch('http://localhost:4000');
+      const response = await fetch(url);
       const data = await response.json();
       // console.log(data);
       setIp(data.ip);
