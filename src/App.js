@@ -73,7 +73,7 @@ function App() {
   const getGeolocationDatas = async (geoLat, geoLon) => {
     try {
       const response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/reverse?lat=${geoLat}&lon=${geoLon}&appid=${API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/reverse?lat=${geoLat}&lon=${geoLon}&appid=${API_KEY}`
       );
       const data = await response.json();
       if (response.status === 200) {
