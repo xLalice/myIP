@@ -33,14 +33,14 @@ function App() {
    */
   const fetchIp = async () => {
     // const url = 'http://localhost:4000';
-    const url = 'https://myip.gaetantremois.fr/';
+    const url = 'https://ip.gaetantremois.fr';
     try {
       const response = await fetch(url);
       const data = await response.json();
       setIp(data.ip);
       setIsLoadedIp(true);
     } catch (error) {
-      console.log(error);
+      console.log('Error : ', error.message);
     }
   };
 
@@ -65,7 +65,7 @@ function App() {
         setGeolocationCity('unvailable');
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
 
@@ -87,7 +87,7 @@ function App() {
     <div className="main">
       <Header />
       <Datas
-        ip={ip}
+        ip={IpDatas.ip}
         isLoadedIp={isLoadedIp}
         isLoadedIpDatas={isLoadedIpDatas}
         ipCity={IpDatas.city}
