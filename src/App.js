@@ -32,12 +32,11 @@ function App() {
    * Fetch backend to get IP informations
    */
   const fetchIp = async () => {
-    const url = 'http://localhost:4000';
-    // const url = 'https://myip.gaetantremois.fr/';
+    // const url = 'http://localhost:4000';
+    const url = 'https://myip.gaetantremois.fr/';
     try {
       const response = await fetch(url);
       const data = await response.json();
-      // console.log(data);
       setIp(data.ip);
       setIsLoadedIp(true);
     } catch (error) {
@@ -48,38 +47,21 @@ function App() {
   /**
    * Fetch geolocation datas with IP address
    * @param {string} ip
+   * @param {string} API_KEY
    */
   const getIpDatas = async (ip) => {
     try {
-      const response = await fetch(`http://ip-api.com/json/${ip}`);
+      const response = await fetch(`https://ipinfo.io/${ip}?token=${API_KEY}`);
       const data = await response.json();
       // check errors here
       if (response.status === 200) {
         setIpDatas(data);
-        setIpLat(data.lat);
-        setIpLon(data.lon);
+        setIpLat(Number(data.loc.split(',')[0]));
+        setIpLon(Number(data.loc.split(',')[1]));
+        setGeolocationCity(data.city);
         setIsLoadedIpDatas(true);
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  /**
-   * Get geolocation from geolocation API service
-   * @param {number} geoLat
-   * @param {number} geoLon
-   */
-  const getGeolocationDatas = async (geoLat, geoLon) => {
-    try {
-      const response = await fetch(
-        `https://api.openweathermap.org/geo/1.0/reverse?lat=${geoLat}&lon=${geoLon}&appid=${API_KEY}`
-      );
-      const data = await response.json();
-      if (response.status === 200) {
-        setGeolocationCity(data[0].name);
-      }
-      if (response.status === 429) {
+      if (response.status !== 200) {
         setGeolocationCity('unvailable');
       }
     } catch (error) {
@@ -101,13 +83,6 @@ function App() {
     getIpDatas(ip);
   }, [ip]);
 
-  /**
-   * If geolocation API authorized fetch reverse location API to get city name
-   */
-  useEffect(() => {
-    (geoLat !== '') & (geoLon !== '') && getGeolocationDatas(geoLat, geoLon);
-  }, [geoLat, geoLon]);
-
   return (
     <div className="main">
       <Header />
@@ -118,11 +93,11 @@ function App() {
         ipCity={IpDatas.city}
         geolocationCity={geolocationCity}
         ipCountry={IpDatas.country}
-        ipLat={IpDatas.lat}
-        ipLon={IpDatas.lon}
+        ipLat={IpLat}
+        ipLon={IpLon}
         geoLat={geoLat}
         geoLon={geoLat}
-        ipRegion={IpDatas.regionName}
+        ipRegion={IpDatas.region}
       />
       {/* Check if lat and lon is defined */}
       {(IpLat !== '') & (IpLon !== '') ? (
