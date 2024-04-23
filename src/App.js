@@ -33,10 +33,11 @@ function App() {
    */
   const fetchIp = async () => {
     // const url = 'http://localhost:4000';
-    const url = 'https://ip.gaetantremois.fr';
+    const url = 'https://getip.gaetantremois.fr';
     try {
       const response = await fetch(url);
       const data = await response.json();
+      console.log(data);
       setIp(data.ip);
       setIsLoadedIp(true);
     } catch (error) {
@@ -61,9 +62,9 @@ function App() {
         setGeolocationCity(data.city);
         setIsLoadedIpDatas(true);
       }
-      if (response.status !== 200) {
-        setGeolocationCity('unvailable');
-      }
+      // if (response.status !== 200) {
+      //   setGeolocationCity('unvailable');
+      // }
     } catch (error) {
       console.log(error.message);
     }
