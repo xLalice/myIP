@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import API_KEY from './API_KEY';
+import KEYS from './API_KEYS';
 import Header from './components/Header/';
 import Datas from './components/Datas/';
 import Map from './components/Map/';
@@ -37,7 +37,7 @@ function App() {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setIp(data.ip);
       setIsLoadedIp(true);
     } catch (error) {
@@ -48,28 +48,46 @@ function App() {
   /**
    * Fetch geolocation datas with IP address
    * @param {string} ip
-   * @param {string} API_KEY
+   * @param {string} KEYS.IP_INFO_API_KEY
    */
   const getIpDatas = async (ip) => {
     try {
-      const response = await fetch(`https://ipinfo.io/${ip}?token=${API_KEY}`);
+      const response = await fetch(
+        `https://ipinfo.io/${ip}?token=${KEYS.IP_INFO_API_KEY}`
+      );
       const data = await response.json();
       // check errors here
       if (response.status === 200) {
         setIpDatas(data);
         setIpLat(Number(data.loc.split(',')[0]));
         setIpLon(Number(data.loc.split(',')[1]));
-        setGeolocationCity(data.city);
         setIsLoadedIpDatas(true);
       }
-      // if (response.status !== 200) {
-      //   setGeolocationCity('unvailable');
-      // }
+      if (response.status !== 200) {
+        console.log(response.status);
+      }
     } catch (error) {
       console.log(error.message);
     }
   };
 
+  /**
+   * Fetch openweather api with geolocation data
+   * @param {number} lat
+   * @param {number} lon
+   */
+  const fetchCityFromGeolocation = async (lat, lon) => {
+    try {
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
+      );
+      const data = await response.json();
+      // console.log(data);
+      setGeolocationCity(data.address.village);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   /**
    * Fetch backend to get location from IP address
    */
@@ -84,6 +102,10 @@ function App() {
     getIpDatas(ip);
   }, [ip]);
 
+  useEffect(() => {
+    fetchCityFromGeolocation(Number(geoLat), Number(geoLon));
+  }, [geoLat, geoLon]);
+
   return (
     <div className="main">
       <Header />
@@ -97,7 +119,7 @@ function App() {
         ipLat={IpLat}
         ipLon={IpLon}
         geoLat={geoLat}
-        geoLon={geoLat}
+        geoLon={geoLon}
         ipRegion={IpDatas.region}
       />
       {/* Check if lat and lon is defined */}

@@ -53,9 +53,9 @@ You're welcome :sunglasses:
 If you wish to use or contribute to the project, follow these steps:point_down::
 
 - Fork the project
-- Replace in API_KEY_EXAMPLE.js file the key with you own key:
-  > `const API_KEY = 'YOUR_API_KEY'` >`export default API_KEY`
-- Rename API_KEY_EXAMPLE.js in API_KEY.js
+- Replace in IP_INFO_API_KEY_EXAMPLE.js file the key with you own key:
+  > `const IP_INFO_API_KEY = 'YOUR_IP_INFO_API_KEY'` >`export default IP_INFO_API_KEY`
+- Rename IP_INFO_API_KEY_EXAMPLE.js in IP_INFO_API_KEY.js
 - Create a feature branch
   > git checkout -b feature/NewFeature
 - Commit your changes
