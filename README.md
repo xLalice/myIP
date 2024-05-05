@@ -42,9 +42,10 @@ npm start or yarn start
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
 - [SCSS](https://sass-lang.com/) - CSS preprocessor.
 - [NodeJS](https://nodejs.org/en) - JavaScript runtime platform.
-- [ip-api.com](http://ip-api.com/) - Geolocation API for fetching location data based on IP address.
-- [OpenWeatherMap](https://openweathermap.org/) - Weather API for reverse geocoding.
+- [ipinfo.io](https://ipinfo.io) - Geolocation API for fetching location data based on IP address.
+- [OpenStreetMap](https://openstreetmap.org/) - Collaborative, open-source mapping platform created by a global community of volunteers.
 - [React Leaflet](https://react-leaflet.js.org/) - React components for Leaflet maps
+- [Backend with NodeJS](https://getip.gaetantremois.fr) - Returns an object with the ip address
 
 ## Contributing
 
