@@ -1,6 +1,6 @@
-$background-color: #111d28;
-$main-color: #f46c2b;
-$third-color: #06101d;
+$background-color: #1B262C;
+$main-color: #3282B8;
+$third-color: #0F4C75;
 
 @mixin desktop-margin {
   margin: auto 5vw;
@@ -13,9 +13,7 @@ $third-color: #06101d;
 .hight-light {
   display: inline-block;
   color: white;
-  // background: $main-color;
   padding: 5px;
-  // TODO: after border rotate
 }
 
 .loader {

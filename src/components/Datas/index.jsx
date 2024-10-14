@@ -51,7 +51,6 @@ const Datas = ({
           <p className="datas__content--label">
             Région : <span className="datas__content--data">{ipRegion}</span>
           </p>
-          <p>Note: This site does not record your IP addresses</p>
         </div>
       ) : (
         <div className="loader"></div>

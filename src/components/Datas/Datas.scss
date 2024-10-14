@@ -3,9 +3,9 @@
 .datas {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
-  text-align: center;
+  text-align: left;
 
   @media all and (max-width: 430px) {
     width: 90%;
