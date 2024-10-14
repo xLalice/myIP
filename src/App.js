@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import KEYS from './API_KEYS';
 import Header from './components/Header/';
 import Datas from './components/Datas/';
 import Map from './components/Map/';
@@ -32,12 +31,11 @@ function App() {
    * Fetch backend to get IP informations
    */
   const fetchIp = async () => {
-    // const url = 'http://localhost:4000';
-    const url = 'https://getip.gaetantremois.fr';
+    const url = process.env.REACT_APP_API_URL;
     try {
       const response = await fetch(url);
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       setIp(data.ip);
       setIsLoadedIp(true);
     } catch (error) {
@@ -48,12 +46,11 @@ function App() {
   /**
    * Fetch geolocation datas with IP address
    * @param {string} ip
-   * @param {string} KEYS.IP_INFO_API_KEY
    */
   const getIpDatas = async (ip) => {
     try {
       const response = await fetch(
-        `https://ipinfo.io/${ip}?token=${KEYS.IP_INFO_API_KEY}`
+        `http://ip-api.com/json/${ip}`
       );
       const data = await response.json();
       // check errors here
